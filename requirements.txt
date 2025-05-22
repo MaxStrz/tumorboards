@@ -1,0 +1,3 @@
+pandas == 2.2.3
+notebook
+hl7apy == 1.3.3

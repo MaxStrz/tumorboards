@@ -1,0 +1,41 @@
+Objekt;Datentyp;Optionen;Beispiel;Notizen;Quelle
+TB Name;varchar;;;;TB-Tool
+Patientname;varchar;;;;Orbis A08
+Geburtsdatum;Datum;;;;Orbis A08
+Adresse des Patienten;varchar;;;;Orbis A08
+Orbis PID;Integar;;;;Orbis A08
+Krankheits ID?;Integar;;;;?
+Datum Vorstellung Tumorboard;Datum;;;;Anmelder
+Chirurgischer Status;Enumeration Einfachauswahl;Präoperativ, Postoperativ;;;?
+Tumorentität;Enumeration Einfachauswahl?;Anus, CCA, Colon, Dünndarm, Rektum usw…;;;PathoWin
+angemeldet von:;String;;;Nur befugte Personen;Anmelder
+Tel.-Nr. vom Anmelder:;Integar;;;;Anmelder
+E-Mail der Fachabteilung:;varchar;;;;Anmelder
+Aktuelle Diagnose und Fragestellung:;varchar(500+);;;;?
+Ist der Patient bereits Studienpatient?;binär;;;;?
+Radiologische Vorstellung erwünscht;binär;;;;?
+Familienanamnese:;Enumeration Einfachauswahl? Mehrfachauswahl?;;blande (Bethesda Kriterien);;?
+ECOG;integar;0-5;;;?
+KI;Decimal;0-100% in 10% Schritten.;;;?
+Bisheriger onkologischer Verlauf:;varchar(500+);;Datum 1: Therapie, Datum 2: Therapie usw… Mehr dazu?;;?
+Histpathologie:;varchar;;Adenokarzinom High Grade;;PathoWin
+Prädiktive Marker;?;;;;PathoWin?
+;;;;;
+Tumorklassifikation: (Initial);;;;;
+Primärtumor;TNM-Klassifikation;;;;PathoWin
+Nodalstatus;TNM-Klassifikation;;;;PathoWin
+Metastasen;TNM-Klassifikation;;;;PathoWin
+L/V/PN;TNM-Klassifikation;;;;PathoWin
+Resektionsrand;R-Klassifikation;;;;PathoWin
+;;;;;
+Entscheider:;varchar;;Dr. Uhl (PATH) usw. ACH, ONK, Praxis, Radiologie, Radioonk, NUK, GASTRO;;Vor Ort
+Vorherige Tumorboards Freitext?;varchar;;Datum 1 GI TB: Freitext Empfehlung Datum 2 GI TB: Freitext Empfehlung usw…;;?
+Letzte Empfehlung umgesetzt?;binär;;;;?
+Für ASV geeignet?;binär;;;;?
+Diskussionsgrundlage:;varchar;;;;?
+Tumorboardempfehlung:;varchar;;Freitext Empfehlung;;?
+Unterschriftfeld;Bild;;;;TB-Tool
+Name der Untershreiber;Varchar;;;;Verantwortlicher
+Funktionsbezeichnung;Varchar;;Funktionsoberärztin;;TB-Tool
+Anmekrung nach Vidierung: ;Varchar;;;;?
+Eingabefeld für Anmerkung nach Vidierung;Varchar;;;;?
