@@ -1,0 +1,15 @@
+{
+    "25.05.2025":
+    [
+        {
+            "Name":"Max",
+            "Nachname":"Mustermann",
+            "PID":"12345"
+        },
+        {
+            "Name":"Fiona",
+            "Nachname":"Fiktivefrau",
+            "PID":"12346"
+        }
+    ]
+}
