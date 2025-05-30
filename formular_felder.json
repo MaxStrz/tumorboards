@@ -1,0 +1,35 @@
+{
+    "tumorentität": [
+        "anus",
+        "colon",
+        "andere"
+    ]
+    ,
+    "histopathologie": [
+        "RAS-Mutation",
+        "BRAF-Mutation"
+    ]
+    ,
+    "tumorklassifikation": [
+        {
+            "primärtumor": [
+                "pTis",
+                {
+                    "pT1": [
+                        "sm1",
+                        "sm2",
+                        "sm3"
+                    ]
+                },
+                "pT2"
+            ]
+        },
+        "nodalstatus"
+    ]
+    ,
+    "entscheider":[
+        "mustermann@krankenhaus.de",
+        "fiktivefrau@krankenhaus.de"
+    ]
+
+}

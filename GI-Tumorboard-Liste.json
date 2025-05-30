@@ -4,12 +4,14 @@
         {
             "Name":"Max",
             "Nachname":"Mustermann",
-            "PID":"12345"
+            "PID":"12345",
+            "TumorID":"024901"
         },
         {
             "Name":"Fiona",
             "Nachname":"Fiktivefrau",
-            "PID":"12346"
+            "PID":"12346",
+            "TumorID":"024902"
         }
     ]
 }
