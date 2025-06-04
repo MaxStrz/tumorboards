@@ -1,0 +1,122 @@
+{
+  "resourceType": "Bundle",
+  "type": "message",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "tumorboard-msg-003",
+        "eventCoding": {
+          "system": "http://example.org/fhir/message-events",
+          "code": "tumor-report"
+        },
+        "source": {
+          "name": "Pathologie-System",
+          "endpoint": "http://patho-system.example.org/fhir"
+        },
+        "focus": [
+          { "reference": "Condition/tumor-024901" },
+          { "reference": "Condition/tumor-024902" }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "123456",
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/patient-id",
+            "value": "123456"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "tumor-024901",
+        "identifier": [
+          {
+            "system": "http://example.org/tumor-id",
+            "value": "024901"
+          }
+        ],
+        "subject": { "reference": "Patient/123456" },
+        "code": { "text": "Anuskarzinom" }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "histopatho-024901",
+        "status": "final",
+        "code": { "text": "RAS-Mutation" },
+        "subject": { "reference": "Patient/123456" },
+        "valueString": "positiv"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "tnm-024901",
+        "status": "final",
+        "code": { "text": "Tumorklassifikation" },
+        "subject": { "reference": "Patient/123456" },
+        "component": [
+          { "code": { "text": "Primärtumor" }, "valueString": "pTis" },
+          { "code": { "text": "Nodalstatus" }, "valueString": "platzhalter" }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "024902",
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/patient-id",
+            "value": "024902"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "tumor-024902",
+        "identifier": [
+          {
+            "system": "http://example.org/tumor-id",
+            "value": "024902"
+          }
+        ],
+        "subject": { "reference": "Patient/024902" },
+        "code": { "text": "Anuskarzinom" }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "histopatho-024902",
+        "status": "final",
+        "code": { "text": "RAS-Mutation" },
+        "subject": { "reference": "Patient/024902" },
+        "valueString": "positiv"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "tnm-024902",
+        "status": "final",
+        "code": { "text": "Tumorklassifikation" },
+        "subject": { "reference": "Patient/024902" },
+        "component": [
+          { "code": { "text": "Primärtumor" }, "valueString": "pTis sm1" },
+          { "code": { "text": "Nodalstatus" }, "valueString": "platzhalter" }
+        ]
+      }
+    }
+  ]
+}

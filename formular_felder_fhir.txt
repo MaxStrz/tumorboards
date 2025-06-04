@@ -1,0 +1,122 @@
+{
+  "resourceType": "Bundle",                 // Ein Container für mehrere Ressourcen (Patient, Diagnosen etc.)
+  "type": "collection",                     // Zeigt an, dass dies eine Sammlung unabhängiger Ressourcen ist
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",          // Repräsentiert den Patientenfall
+        "id": "example-patient",            // Interne ID innerhalb des Bundles
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/patient-id",  // Lokales System zur Patientenkodierung
+            "value": "12345"                                     // Patienten-ID (fiktiv)
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",        // Darstellung der Tumorentität (z. B. Kolon, Anus)
+        "id": "tumor-entity",
+        "subject": {
+          "reference": "Patient/example-patient"  // Verknüpfung zur Patient-Ressource
+        },
+        "code": {
+          "text": "Anuskarzinom"            // Beschreibung der Tumorentität
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",      // Molekulare Merkmale als Beobachtungseinheit
+        "id": "histopathology",
+        "status": "final",                  // Befund abgeschlossen
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"        // Kategorie: Laborbefunde
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Molekularpathologische Merkmale"  // Allgemeine Beschreibung
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "component": [                     // Unterelemente, die die Mutationen beschreiben
+          {
+            "code": { "text": "RAS-Mutation" },
+            "valueString": "positiv"
+          },
+          {
+            "code": { "text": "BRAF-Mutation" },
+            "valueString": "negativ"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",      // Weitere Beobachtungen: TNM-Klassifikation
+        "id": "tumor-classification",
+        "status": "final",
+        "code": {
+          "text": "Tumorklassifikation"     // Oberbegriff für die Klassifikation
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "component": [                     // Details zur Tumorklassifikation (T- und N-Status)
+          {
+            "code": { "text": "Primärtumor" },
+            "valueString": "pT1-sm2"       // Feingliederung: z. B. pT1 mit Subklassifikation sm2
+          },
+          {
+            "code": { "text": "Nodalstatus" },
+            "valueString": "N0"            // Beispielhafter Nodalstatus
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Task",             // Aufgabe: Entscheidung über Fall im Tumorboard
+        "id": "tumorboard-decision",
+        "status": "requested",              // Aufgabe wurde angefordert
+        "intent": "order",                  // Entscheidung soll aktiv getroffen werden
+        "description": "Fallentscheidung durch Tumorboard",  // Freitextbeschreibung
+        "for": {
+          "reference": "Patient/example-patient"
+        },
+        "owner": {
+          "identifier": {
+            "system": "mailto",             // Die E-Mail-Adresse als Kennung
+            "value": "mustermann@krankenhaus.de"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Task",             // Zweiter Entscheider im Tumorboard
+        "id": "tumorboard-decision-2",
+        "status": "requested",
+        "intent": "order",
+        "description": "Fallentscheidung durch Tumorboard",
+        "for": {
+          "reference": "Patient/example-patient"
+        },
+        "owner": {
+          "identifier": {
+            "system": "mailto",
+            "value": "fiktivefrau@krankenhaus.de"
+          }
+        }
+      }
+    }
+  ]
+}
