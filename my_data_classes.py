@@ -2,13 +2,6 @@ from collections import defaultdict
 from dataclasses import dataclass
 import pymupdf
 
-# @dataclass
-# class ThoraxFormKeys:
-#     title = 'Thorax und Allgemeines Tumorboard'
-#     datum = 'Datum Vorstellung Tumorboard'
-#     patientenname = 'Name:'
-#     patientengeburtstag = 'Geb.-Datum'
-
 thoraxformkeys = {
     'title':'Thorax und Allgemeines Tumorboard',
     'datum':'Datum Vorstellung Tumorboard',
@@ -21,16 +14,12 @@ class Element:
     name: str # e.g. title, datum, patientenname
     text: str # e.g. 'Thorax und Allgemeines Tumorboard'
     block: tuple = None
+    is_bold: bool = False # fetter Text bedeutet relevante Datenelement
 
 @dataclass
 class Document:
     name: str
     datei_name: str = None
-    elements: list = None
-    title: Element = None
-    datum: Element = None
-    patientenname: Element = None
-    patientengeburtstag: Element = None
     aktuelle_diagnose: Element = None
 
     def pdf_bloeke_erstellen(self):
